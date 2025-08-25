@@ -14,6 +14,8 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
 }

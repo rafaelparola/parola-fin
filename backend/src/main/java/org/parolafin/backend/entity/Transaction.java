@@ -20,8 +20,9 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column(nullable = false)
-    private int user_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private AppUser user;
     @Column(nullable = false)
     private BigDecimal amount;
     @Column(nullable = false)

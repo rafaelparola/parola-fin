@@ -1,15 +1,17 @@
 spring:
-    application:
-        name: backend
-    datasource:
-        password: ${POSTGRES_PASSWORD}
-        url: jdbc:postgresql://localhost:5432/${POSTGRES_DB}
-        username: ${POSTGRES_USER}
-    jpa:
-        properties:
-            hibernate:
-                dialect: org.hibernate.dialect.PostgreSQLDialect
-        hibernate:
-            # For development, after should be changed to create-only or update
-            ddl-auto: create
+  application:
+      name: parola-fin
+  datasource:
+      password: ${POSTGRES_PASSWORD}
+      url: jdbc:postgresql://localhost:5432/${POSTGRES_DB}
+      username: ${POSTGRES_USER}
+  jpa:
+      properties:
+          hibernate:
+              dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+          # For development, after should be changed to create-only or update
+          ddl-auto: create
+server:
+  port: 8080
 

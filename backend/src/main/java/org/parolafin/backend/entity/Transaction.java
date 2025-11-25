@@ -20,20 +20,27 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private AppUser user;
+
     @Column(nullable = false)
     private BigDecimal amount;
+
     @Column(nullable = false)
     private LocalDateTime date;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TransactionType type;
+
     @Column(nullable = false)
     private String description;
+
     @CreationTimestamp
     private LocalDateTime created_at;
+    
     @UpdateTimestamp
     private LocalDateTime updated_at;
 }
